@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Example</title>
+    <style>
+        body {
+            background-image: url('/config/workspace/templates/online.jpeg');
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+            text-align: left;
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<form action="upload" method="POST">
+    <label for="dropdown">Select an option:</label>
+    <select id="dropdown" name="dropdown">
+        <option value="CASH_OUT">CASH_OUT</option>
+        <option value="PAYMENT">PAYMENT</option>
+        <option value="CASH_IN">CASH_IN</option>
+        <option value="TRANSFER">TRANSFER</option>
+        <option value="DEBIT">DEBIT</option>
+    </select>
+    <br>
+    <br>
+    <label for="field2">Amount:</label>
+    <input type="text" id="field2" name="field2" required>
+
+    <label for="field3">Old Balance origin:</label>
+    <input type="text" id="field3" name="field3" required>
+
+    <label for="field4">New Balance Origin:</label>
+    <input type="text" id="field4" name="field4" required>
+
+    <label for="field5">Old Balance Dest:</label>
+    <input type="text" id="field5" name="field5" required>
+
+    <label for="field6">New Balance Dest:</label>
+    <input type="text" id="field6" name="field6" required>
+
+    <input type="submit" value="Detect">
+</form>
+<h3>The Payment is: {{results}}
+
+</body>
+</html>
+
